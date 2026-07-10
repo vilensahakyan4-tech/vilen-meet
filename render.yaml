@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: vilen-meet
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: METERED_APP_NAME
+        sync: false
+      - key: METERED_SECRET_KEY
+        sync: false
