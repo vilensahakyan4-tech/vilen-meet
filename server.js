@@ -150,7 +150,10 @@ const server = http.createServer(async (req, res) => {
       return json(res, 200, buildMeetingResponse(req, meeting));
     }
 
-    let filePath = path.join(PUBLIC, url.pathname === '/' ? 'index.html' : url.pathname);
+    const requestedPath = url.pathname === '/'
+      ? 'index.html'
+      : decodeURIComponent(url.pathname).replace(/^\/+/, '');
+    let filePath = path.join(PUBLIC, requestedPath);
     if (!filePath.startsWith(PUBLIC) || !fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
       filePath = path.join(PUBLIC, 'index.html');
     }
