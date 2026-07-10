@@ -1,0 +1,13 @@
+{
+  "name": "vilen-meet",
+  "version": "1.0.0",
+  "description": "VILEN Meet — simple video meetings app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}
