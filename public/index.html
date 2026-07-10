@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b14">
+  <title>VILEN Meet — видеовстречи</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="glow glow-a"></div>
+  <div class="glow glow-b"></div>
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="VILEN Meet"><span>V</span> VILEN Meet</a>
+    <nav>
+      <a href="#features">Возможности</a>
+      <a href="#join">Войти</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">VILEN SPACE · ЖИВОЙ ЗВОНОК · ОДНА ССЫЛКА</div>
+        <h1>Твоя встреча —<br><em>в одном движении.</em></h1>
+        <p>VILEN Meet — чистое пространство для видеовстреч. Создай комнату, отправь ссылку и собирай людей без лишних окон, регистраций и шума.</p>
+        <div class="hero-actions">
+          <button class="primary" id="quickCreateBtn">Запустить комнату <b>↗</b></button>
+          <a class="secondary" href="#join">Присоединиться</a>
+        </div>
+        <div class="signal-card">
+          <div><span></span> приватная комната</div>
+          <div><span></span> ссылка за секунду</div>
+          <div><span></span> живой эфир</div>
+        </div>
+      </div>
+
+      <section class="card meeting-card" id="join">
+        <div class="tabs">
+          <button class="active" data-tab="create">Новая комната</button>
+          <button data-tab="join">Вход</button>
+        </div>
+
+        <form id="createForm" class="form-panel">
+          <label>
+            Название комнаты
+            <input id="meetingTitle" maxlength="80" placeholder="Например: Комната Вилена">
+          </label>
+          <label>
+            Ваше имя
+            <input id="hostName" maxlength="60" placeholder="Вилен">
+          </label>
+          <button class="primary full">Открыть комнату <b>→</b></button>
+        </form>
+
+        <form id="joinForm" class="form-panel hidden">
+          <label>
+            Код или ссылка комнаты
+            <input id="joinCode" placeholder="meet-abc123 или ссылка">
+          </label>
+          <label>
+            Ваше имя
+            <input id="guestName" maxlength="60" placeholder="Гость">
+          </label>
+          <button class="primary full">Войти в комнату <b>→</b></button>
+        </form>
+      </section>
+    </section>
+
+    <section class="features" id="features">
+      <article>
+        <span>01</span>
+        <h3>Одна ссылка</h3>
+        <p>Комната создаётся сразу, ссылку можно отправить кому угодно.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Живой эфир</h3>
+        <p>Видео, звук, чат и участники в одном спокойном экране.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Без лишнего</h3>
+        <p>После звонка возвращайся домой и открывай новую комнату.</p>
+      </article>
+    </section>
+  </main>
+
+  <dialog id="createdDialog">
+    <button class="close" id="closeDialog">×</button>
+    <div class="eyebrow">КОМНАТА ГОТОВА</div>
+    <h2 id="createdTitle">VILEN Meet</h2>
+    <p>Скопируй ссылку и отправь участникам.</p>
+    <div class="copy-box" id="createdLink"></div>
+    <div class="dialog-actions">
+      <button class="secondary" id="copyLinkBtn">Скопировать</button>
+      <button class="primary" id="enterMeetingBtn">Войти <b>→</b></button>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
